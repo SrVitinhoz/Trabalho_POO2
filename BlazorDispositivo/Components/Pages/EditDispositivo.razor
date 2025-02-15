@@ -1,0 +1,39 @@
+﻿@page "/edit-dispositivo/{id:int}"
+@using BlazorDispositivo.Models
+@using BlazorDispositivo.Services
+@inject DeviceService DeviceService
+@inject NavigationManager Navigation
+
+<h3>Editar Dispositivo</h3>
+
+<EditForm Model="@dispositivo" OnValidSubmit="HandleValidSubmit">
+    <InputText @bind-Value="dispositivo.Descricao" placeholder="Descrição" />
+    <InputNumber @bind-Value="dispositivo.Aliquota" placeholder="Alíquota" />
+    <InputCheckbox @bind-Value="dispositivo.StatusDispositivo" placeholder="Status" />
+    <button type="submit">Atualizar</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Dispositivo dispositivo = new Dispositivo();
+
+    protected override void OnParametersSet()
+    {
+        dispositivo = DeviceService.GetDispositivos().FirstOrDefault(d => d.Id == Id);
+    }
+
+    private void HandleValidSubmit()
+    {
+        try
+        {
+            DeviceService.UpdateDispositivo(dispositivo);
+            Navigation.NavigateTo("/list-dispositivos");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+}

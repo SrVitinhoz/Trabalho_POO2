@@ -1,0 +1,60 @@
+﻿@page "/list-dispositivos"
+@using BlazorDispositivo.Models
+@using BlazorDispositivo.Services
+@inject DeviceService DeviceService
+
+<h3>Lista de Dispositivos</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Alíquota</th>
+            <th>Descrição</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dispositivo in dispositivos)
+        {
+                <tr>
+                    <td>@dispositivo.Id</td>
+                    <td>@dispositivo.Aliquota</td>
+                    <td>@dispositivo.Descricao</td>
+                    <td>@dispositivo.StatusDispositivo</td>
+                    <td>
+                        <button @onclick="(() => EditDispositivo(dispositivo.Id))">Editar</button>
+                        <button @onclick="(() => DeleteDispositivo(dispositivo.Id))">Deletar</button>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Dispositivo> dispositivos;
+
+    protected override void OnInitialized()
+    {
+        dispositivos = DeviceService.GetDispositivos();
+    }
+
+    private void EditDispositivo(int id)
+    {
+        // Navegar para a página de edição
+    }
+
+    private void DeleteDispositivo(int id)
+    {
+        try
+        {
+            DeviceService.DeleteDispositivo(id);
+            dispositivos = DeviceService.GetDispositivos();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+}

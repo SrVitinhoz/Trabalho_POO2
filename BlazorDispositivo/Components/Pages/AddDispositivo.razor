@@ -1,0 +1,31 @@
+﻿@page "/add-dispositivo"
+@using BlazorDispositivo.Models
+@using BlazorDispositivo.Services
+@inject DeviceService DeviceService
+@inject NavigationManager Navigation
+
+<h3>Cadastrar Dispositivo</h3>
+
+<EditForm Model="@dispositivo" OnValidSubmit="HandleValidSubmit">
+    <InputText @bind-Value="dispositivo.Descricao" placeholder="Descrição" />
+    <InputNumber @bind-Value="dispositivo.Aliquota" placeholder="Alíquota" />
+    <InputCheckbox @bind-Value="dispositivo.StatusDispositivo" placeholder="Status" />
+    <button type="submit">Cadastrar</button>
+</EditForm>
+
+@code {
+    private Dispositivo dispositivo = new Dispositivo();
+
+    private void HandleValidSubmit()
+    {
+        try
+        {
+            DeviceService.AddDispositivo(dispositivo);
+            Navigation.NavigateTo("/list-dispositivos");
+        }
+        catch (Exception ex)
+        {
+           Console.WriteLine(ex.Message);
+        }
+    }
+}
