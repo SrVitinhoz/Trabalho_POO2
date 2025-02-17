@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CadastroDispositivo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63fa1943fcad98e93ddea1aa7d5c9b119ee8ff68")]
 [assembly: System.Reflection.AssemblyProductAttribute("CadastroDispositivo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CadastroDispositivo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
