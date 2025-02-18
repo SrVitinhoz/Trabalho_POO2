@@ -38,7 +38,6 @@ C:\Users\vitor\OneDrive\Área de Trabalho\Nova pasta\CadastroDispositivo\obj\Deb
 C:\Users\vitor\OneDrive\Área de Trabalho\Nova pasta\CadastroDispositivo\obj\Debug\net9.0-windows\CadastroDispositivo.AssemblyInfoInputs.cache
 C:\Users\vitor\OneDrive\Área de Trabalho\Nova pasta\CadastroDispositivo\obj\Debug\net9.0-windows\CadastroDispositivo.AssemblyInfo.cs
 C:\Users\vitor\OneDrive\Área de Trabalho\Nova pasta\CadastroDispositivo\obj\Debug\net9.0-windows\CadastroDispositivo.csproj.CoreCompileInputs.cache
-C:\Users\vitor\OneDrive\Área de Trabalho\Nova pasta\CadastroDispositivo\obj\Debug\net9.0-windows\CadastroDispositivo.sourcelink.json
 C:\Users\vitor\OneDrive\Área de Trabalho\Nova pasta\CadastroDispositivo\obj\Debug\net9.0-windows\Cadastro.A9409FDB.Up2Date
 C:\Users\vitor\OneDrive\Área de Trabalho\Nova pasta\CadastroDispositivo\obj\Debug\net9.0-windows\CadastroDispositivo.dll
 C:\Users\vitor\OneDrive\Área de Trabalho\Nova pasta\CadastroDispositivo\obj\Debug\net9.0-windows\refint\CadastroDispositivo.dll

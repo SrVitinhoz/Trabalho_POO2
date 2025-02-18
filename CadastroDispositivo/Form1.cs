@@ -12,14 +12,13 @@ namespace CadastroDispositivo
             InitializeComponent();
         }
 
-        // Página 1: Cadastro do Dispositivo
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             try
             {
                 // Cria um objeto Dispositivo com os dados do formulário
                 Dispositivo dispositivo = new Dispositivo
-                { 
+                {
                     Aliquota = decimal.Parse(txtAliquota.Text),
                     Descricao = txtDescricao.Text,
                     StatusDispositivo = txtStatus.Text
@@ -28,7 +27,7 @@ namespace CadastroDispositivo
                 using (MySqlConnection conn = ConexaoBD.GetConnection())
                 {
                     conn.Open();
-                    string query = "INSERT INTO Dispositivos (aliquota, descricao, status_dispositivo) VALUES (@aliquota, @descricao, @status_dispositivo)";
+                    string query = "INSERT INTO dispositivo (aliquota, descricao, status_dispositivo) VALUES (@aliquota, @descricao, @status_dispositivo)";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@aliquota", dispositivo.Aliquota);
                     cmd.Parameters.AddWithValue("@descricao", dispositivo.Descricao);
@@ -41,9 +40,9 @@ namespace CadastroDispositivo
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+
         }
 
-        // Página 2: Listar Dispositivos
         private void btnListar_Click(object sender, EventArgs e)
         {
             try
@@ -53,7 +52,7 @@ namespace CadastroDispositivo
                 using (MySqlConnection conn = ConexaoBD.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT * FROM dispositivos";
+                    string query = "SELECT * FROM dispositivo";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -77,9 +76,9 @@ namespace CadastroDispositivo
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+
         }
 
-        // Página 3: Deletar Dispositivo
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             try
@@ -100,9 +99,9 @@ namespace CadastroDispositivo
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+
         }
 
-        // Página 4: Atualizar Dispositivo
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             try
@@ -122,9 +121,9 @@ namespace CadastroDispositivo
                     string query = "UPDATE dispositivo SET aliquota = @aliquota, descricao = @descricao, status_dispositivo = @status_dispositivo WHERE Id = @Id";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Id", dispositivo.Id);
-                    cmd.Parameters.AddWithValue("@Aliquota", dispositivo.Aliquota);
-                    cmd.Parameters.AddWithValue("@Descricao", dispositivo.Descricao);
-                    cmd.Parameters.AddWithValue("@StatusDispositivo", dispositivo.StatusDispositivo);
+                    cmd.Parameters.AddWithValue("@aliquota", dispositivo.Aliquota);
+                    cmd.Parameters.AddWithValue("@descricao", dispositivo.Descricao);
+                    cmd.Parameters.AddWithValue("@status_dispositivo", dispositivo.StatusDispositivo);
                     cmd.ExecuteNonQuery();
                 }
                 MessageBox.Show("Dispositivo atualizado com sucesso!");
@@ -133,6 +132,7 @@ namespace CadastroDispositivo
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+
         }
     }
 }

@@ -102,6 +102,7 @@
             btnCadastrar.TabIndex = 6;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // txtStatus
             // 
@@ -171,6 +172,7 @@
             btnListar.TabIndex = 1;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = true;
+            btnListar.Click += btnListar_Click;
             // 
             // dataGridViewDispositivos
             // 
@@ -201,6 +203,7 @@
             btnDeletar.TabIndex = 2;
             btnDeletar.Text = "Deletar";
             btnDeletar.UseVisualStyleBackColor = true;
+            btnDeletar.Click += btnDeletar_Click;
             // 
             // txtIdDeletar
             // 
@@ -273,6 +276,7 @@
             btnAtualizar.TabIndex = 4;
             btnAtualizar.Text = "Atualizar";
             btnAtualizar.UseVisualStyleBackColor = true;
+            btnAtualizar.Click += btnAtualizar_Click;
             // 
             // label8
             // 
