@@ -13,6 +13,9 @@ namespace CadastroDispositivo.Models
         public string Descricao { get; set; }
         public string StatusDispositivo { get; set; }
 
+        public int fabricante_id { get; set; }
+        public string NomeFabricante { get; set; }
+
         // Construtor padrão
         public Dispositivo() { }
 

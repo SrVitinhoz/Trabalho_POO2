@@ -30,6 +30,8 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            label9 = new Label();
+            cmbFabricante = new ComboBox();
             btnCadastrar = new Button();
             txtStatus = new TextBox();
             txtDescricao = new TextBox();
@@ -79,6 +81,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(label9);
+            tabPage1.Controls.Add(cmbFabricante);
             tabPage1.Controls.Add(btnCadastrar);
             tabPage1.Controls.Add(txtStatus);
             tabPage1.Controls.Add(txtDescricao);
@@ -94,9 +98,28 @@
             tabPage1.Text = "CadastrarDispositivo";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(655, 132);
+            label9.Name = "label9";
+            label9.Size = new Size(68, 15);
+            label9.TabIndex = 8;
+            label9.Text = "Fabricante :";
+            // 
+            // cmbFabricante
+            // 
+            cmbFabricante.FormattingEnabled = true;
+            cmbFabricante.Location = new Point(618, 175);
+            cmbFabricante.Name = "cmbFabricante";
+            cmbFabricante.Size = new Size(121, 23);
+            cmbFabricante.TabIndex = 7;
+            cmbFabricante.DropDown += cmbFabricante_SelectedIndexChanged;
+            cmbFabricante.SelectedIndexChanged += cmbFabricante_SelectedIndexChanged;
+            // 
             // btnCadastrar
             // 
-            btnCadastrar.Location = new Point(638, 349);
+            btnCadastrar.Location = new Point(655, 354);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(75, 23);
             btnCadastrar.TabIndex = 6;
@@ -362,5 +385,7 @@
         private Label label8;
         private Label label7;
         private Label label6;
+        private Label label9;
+        private ComboBox cmbFabricante;
     }
 }
